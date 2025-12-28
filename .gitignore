@@ -1,0 +1,27 @@
+# Ignore everything by default
+*
+
+# But not these files/directories
+!.gitignore
+!nvim/
+!.bashrc
+!README.md
+
+# Optional: Ignore contents of untracked directories unless explicitly allowed
+nvim/*
+!nvim/**
+
+# Don't ignore powerline config settings
+!powerline/
+!powerline/*
+!powerline/**
+
+# Kitty
+!kitty/
+!kitty/*
+!kitty/**
+
+# Bash
+!bash/
+!bash/*
+!bash/**
