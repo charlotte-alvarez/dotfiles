@@ -18,3 +18,7 @@ alias gdc="git diff --cached"
 
 # Nvim related
 alias vim="nvim"
+
+# Python related
+alias py="python3"
+alias python="python3"
