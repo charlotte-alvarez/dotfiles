@@ -14,6 +14,10 @@ alias ga="git add"
 alias gaa="git add --all"
 alias gap="git add -p"
 alias gdc="git diff --cached"
+alias gb="git branch"
+alias gc="git checkout"
+alias gcn="git checkout -b"
+alias gr="git restore --staged"
 
 
 # Nvim related
