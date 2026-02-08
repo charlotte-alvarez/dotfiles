@@ -1,0 +1,28 @@
+# Keybinds
+include config-files/keybinds.conf
+
+# Font, my favorite font is maple mono :)
+font_family JetBrainsMono
+
+# Make the cursor shape a beam
+shell_integration no-cursor
+cursor_shape beam
+
+# Padding
+window_padding_width 7
+window_padding_height 10
+
+# Tabs
+tab_bar_style slant
+
+# Scroll back up to 3000 lines.
+scrollback_lines 3000
+
+#Default font size.
+font_size 11
+
+# Background opacity, set to 0 if you want blur/transparency.
+background_opacity 0.97
+
+# Colors
+include config-files/colors.conf
