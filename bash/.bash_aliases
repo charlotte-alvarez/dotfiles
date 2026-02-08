@@ -26,3 +26,6 @@ alias vim="nvim"
 # Python related
 alias py="python3"
 alias python="python3"
+
+# Apt related
+alias aptu="sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y"
