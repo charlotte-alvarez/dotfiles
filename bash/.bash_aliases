@@ -18,6 +18,7 @@ alias gb="git branch"
 alias gc="git checkout"
 alias gcn="git checkout -b"
 alias gr="git restore --staged"
+alias gbpurge='git branch --merged | grep -Ev "(\*|master|develop|staging)" | xargs -n 1 git branch -d' # Delete local branches which have already been merged
 
 
 # Nvim related
