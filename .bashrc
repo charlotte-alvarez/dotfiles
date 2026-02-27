@@ -12,6 +12,11 @@ if [ -f ~/.config/bash/bash_aliases ]; then
     . ~/.config/bash/bash_aliases
 fi
 
+# Powerline
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+. /usr/share/powerline/bindings/bash/powerline.sh
 
 ######################################################################################################
 ######################################################################################################
