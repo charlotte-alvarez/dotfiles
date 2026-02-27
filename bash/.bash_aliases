@@ -27,3 +27,6 @@ alias vim="nvim"
 # Python related
 alias py="python3"
 alias python="python3"
+
+alias update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade'
+alias aptupdate='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade'
