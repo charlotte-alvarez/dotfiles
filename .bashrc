@@ -8,8 +8,8 @@
 
 
 # Aliases
-if [ -f ~/.config/bash/.bash_aliases ]; then
-    . ~/.config/bash/.bash_aliases
+if [ -f ~/.config/bash/bash_aliases ]; then
+    . ~/.config/bash/bash_aliases
 fi
 
 
