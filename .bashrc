@@ -12,6 +12,9 @@ if [ -f ~/.config/bash/bash_aliases ]; then
     . ~/.config/bash/bash_aliases
 fi
 
+# nvim
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
 # Powerline
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
@@ -125,3 +128,4 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+. "$HOME/.cargo/env"
