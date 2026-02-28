@@ -1,6 +1,16 @@
 local k = vim.keymap
+local wk = require("which-key").add
 
-k.set('i', 'jk', '<Esc>', { desc = 'exit insert with jk' })
-k.set('n', '<leader>d', '"_d', { desc = 'delete without removing clipboard' })
-k.set('v', '<leader>d', '"_d', { desc = 'delete without removing clipboard' })
-k.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Remove highlighting when esc pressed' })
+wk({
+    { "jk", "<Esc>", desc = "Exit insert mode with jk", mode = "i" },
+    { "<leader>d", '"_d', desc = "delete without removing clipboard", mode = {"n", "v"}},
+    { "<Esc>", "<cmd>nohlsearch<CR>", desc = "Removing highlighting when esc pressed"}
+})
+
+
+-- nvim-tree
+local tree = require("nvim-tree.api").tree
+wk({
+    { "<leader>e", group = "file explorer" },
+    { "<leader>ee", function() tree.toggle() end, desc = "Toggle nvim-tree", mode = "n"}
+})
