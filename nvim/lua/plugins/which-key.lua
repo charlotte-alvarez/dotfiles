@@ -1,9 +1,7 @@
 return {
     "folke/which-key.nvim",
     event = "VeryLazy",
-    dependencies = {
-        'nvim-mini/mini.nvim', version = '*'
-    },
+    dependencies = { 'nvim-mini/mini.nvim', version = '*' },
     opts = {
         -- your configuration comes here
         -- or leave it empty to use the default settings
