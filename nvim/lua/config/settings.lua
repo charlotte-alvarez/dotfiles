@@ -3,6 +3,11 @@ local o = vim.opt
 
 -- Editor options
 
+
+-- Disable netrw for nvim-tree
+global.loaded_netrw = 1
+global.loaded_netrwPlugin = 1
+
 -- Line numbers
 o.number = true 		-- Print the line number in front of each line
 o.relativenumber = true 	-- Show the line number relative to the line with the cursor in front of each line.
