@@ -49,3 +49,9 @@ wk({
     { "<leader>fk", function() telescope.keymaps() end, desc = "Keymaps" },
     { "<leader>fh", function() telescope.help_tags() end, desc = "Help Tags" },
 })
+
+-- ToggleTerm
+wk({
+    { "<leader>T", group = "Terminal"},
+    { "<leader>Tt", "<cmd>ToggleTerm<CR>", desc = "Toggle" },
+})
