@@ -3,8 +3,21 @@ local wk = require("which-key").add
 
 wk({
     { "jk", "<Esc>", desc = "Exit insert mode with jk", mode = "i" },
-    { "<leader>d", '"_d', desc = "delete without removing clipboard", mode = {"n", "v"}},
-    { "<Esc>", "<cmd>nohlsearch<CR>", desc = "Removing highlighting when esc pressed"}
+    { "<leader>d", "_d", desc = "delete without removing clipboard", mode = {"n", "v"}},
+    { "<Esc>", "<cmd>nohlsearch<CR>", desc = "Removing highlighting when esc pressed"},
+
+    -- Window controls
+    { "<leader>w", desc = "Window" },
+    { "<leader>wl", "<cmd>vs_f<CR>", noremap = true, desc = "RIGHT Split" },
+    { "<leader>wj", "<cmd>sp_f<CR>", noremap = true, desc = "DOWN Split" },
+    { "<leader>wH", "<C-w>h", noremap = true, desc = "Move to LEFT Window" },
+    { "<leader>wJ", "<C-w>j", noremap = true, desc = "Move to DOWN Window" },
+    { "<leader>wK", "<C-w>k", noremap = true, desc = "Move to UP Window" },
+    { "<leader>wL", "<C-w>l", noremap = true, desc = "Move to RIGHT Window" },
+
+    -- Quitting Windows
+    { "<leader>qq", "<cmd>wq<CR>", noremap = true, desc = "Quit" },
+    { "<leader>qa", "<cmd>wqa<CR>", noremap = true, desc = "Quit all" },
 })
 
 
