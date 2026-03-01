@@ -38,3 +38,14 @@ wk({
     { "<leader>cl", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>", desc = "LSP Definitions / references / ... (Trouble)" },
     { "<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>", desc = "Symbols (Trouble)" },
 })
+
+-- telescope
+local telescope = require("telescope.builtin")
+wk({
+    { "<leader>f", group = "Find"},
+    { "<leader>fc", function() telescope.find_files() end, desc = "CWD Files" },
+    { "<leader>ff", function() telescope.git_files() end, desc = "Project Files" },
+    { "<leader>fs", function() telescope.live_grep() end, desc = "Live Grep" },
+    { "<leader>fk", function() telescope.keymaps() end, desc = "Keymaps" },
+    { "<leader>fh", function() telescope.help_tags() end, desc = "Help Tags" },
+})
