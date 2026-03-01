@@ -8,6 +8,7 @@ alias source="source ~/.config/.bashrc && echo $?"
 # Git related
 alias gs="git status"
 alias gc="git commit -m"
+alias gca="git commit --all -m"
 alias gp="git push"
 alias gd="git diff"
 alias ga="git add"
