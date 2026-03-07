@@ -2,6 +2,7 @@ return {
     'nvim-treesitter/nvim-treesitter',
     lazy = false,
     build = ':TSUpdate',
+    dependencies = { "tadmccorkle/markdown.nvim" },
     opts = {
         -- LazyVim config for treesitter
         indent = { enable = true }, ---@type lazyvim.TSFeat
@@ -32,6 +33,9 @@ return {
             "vimdoc",
             "xml",
             "yaml"
+        },
+        markdown = {
+            enable = true,
         }
     }
 }
