@@ -128,4 +128,5 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-. "$HOME/.cargo/env"
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
