@@ -7,7 +7,7 @@ wk({
     { "<Esc>", "<cmd>nohlsearch<CR>", desc = "Removing highlighting when esc pressed"},
 
     -- Window controls
-    { "<leader>w", desc = "Window" },
+    { "<leader>w", group = "Window" },
     { "<leader>wl", "<cmd>vs<CR>", noremap = true, desc = "RIGHT Split" },
     { "<leader>wj", "<cmd>sp<CR>", noremap = true, desc = "DOWN Split" },
     { "<leader>wH", "<C-w>h", noremap = true, desc = "Move to LEFT Window" },
@@ -15,6 +15,11 @@ wk({
     { "<leader>wK", "<C-w>k", noremap = true, desc = "Move to UP Window" },
     { "<leader>wL", "<C-w>l", noremap = true, desc = "Move to RIGHT Window" },
     { "<leader>wq", "<cmd>clo<CR>", noremap = true, desc = "Close current window" },
+
+    -- tab controls
+    { "<leader>W", group = "Tab" },
+    { "<leader>WQ", "<cmd>tabclose<CR>", noremap = true, desc = "Close tab" },
+
 
     -- Quitting Windows
     { "<leader>qq", "<cmd>wq<CR>", noremap = true, desc = "Quit" },
@@ -56,4 +61,10 @@ wk({
     { "<leader>T", group = "Terminal"},
     { "<leader>Tt", "<cmd>ToggleTerm<CR>", desc = "Toggle" },
     { "<Esc>", "<C-\\><C-n>", desc = "Exit terminal-mode", mode= {"t" }}
+})
+
+-- Neogit
+wk({
+    { "<leader>g", group = "Git"},
+    { "<leader>gg", "<cmd>Neogit cwd=%:p:h kind=floating<CR>", desc = "Open Neogit in project repo"}
 })
