@@ -119,7 +119,9 @@
       "h" '(:ignore t :wk "help")
       "hk" '(describe-key :wk "Describe key")
       "hc" '(describe-key-briefly :wk "Describe key briefly")
-    )
+      "hx" '(describe-command :wk "Describe command")
+      "hf" '(describe-function :wk "Describe function")
+      )
 
     ;; Reload config (keep inside :config!)
     (defun char/reload-config ()
