@@ -1,27 +1,38 @@
 # Ignore everything by default
 *
 
-# But not these files/directories
+# Allow gitignore itself
 !.gitignore
+
+# Allow emacs and everything inside
+!emacs/
+!emacs/**
+
+# Now ignore certain subdirs inside emacs
+emacs/elpaca/
+emacs/eln-cache/
+
+# Ignore emacs backup files
+*~
+
+# Other allowed dirs/files
 !nvim/
+!nvim/**
+
 !.bashrc
 !README.md
 
-# Optional: Ignore contents of untracked directories unless explicitly allowed
-nvim/*
-!nvim/**
-
-# Don't ignore powerline config settings
+# powerline
 !powerline/
-!powerline/*
 !powerline/**
+!powerline/*
 
-# Kitty
+# kitty
 !kitty/
-!kitty/*
 !kitty/**
+!kitty/*
 
-# Bash
+# bash
 !bash/
-!bash/*
 !bash/**
+!bash/*
