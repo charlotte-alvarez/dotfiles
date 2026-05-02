@@ -133,6 +133,9 @@
   "i" '(:ignore t :wk "Edit")
   "ic" '(comment-line :wk "Toggle comment"))
 
+(global-set-key (kbd "C-=") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+
 (set-face-attribute 'default nil
 		    :font "JetBrains Mono"
 		    :height 110
@@ -190,3 +193,7 @@
 (use-package org-bullets
   :ensure t
   :hook (org-mode . org-bullets-mode))
+
+(electric-indent-mode 0)
+
+(require 'org-tempo)
