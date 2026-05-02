@@ -1,7 +1,26 @@
 #+TITLE: Char's GNU Emacs Config
 #+AUTHOR: Char :3
 #+DESCRIPTION: Char's personal Emacs config.
-#+STARTUP: showeverything #+OPTIONS: toc:2
+#+STARTUP: showeverything 
+#+OPTIONS: toc:2
+
+* Table of Contents :toc:
+- [[#important-programs-to-load-first][IMPORTANT PROGRAMS TO LOAD FIRST]]
+  - [[#elpaca-package-manager][Elpaca Package Manager]]
+  - [[#load-evil-mode][Load Evil Mode]]
+  - [[#general-keybindings][General Keybindings]]
+  - [[#regular-keybinds][Regular Keybinds]]
+- [[#fonts][Fonts]]
+  - [[#setting-the-font-face][Setting the Font Face]]
+- [[#graphical-user-interface-tweaks][GRAPHICAL USER INTERFACE TWEAKS]]
+  - [[#disable-menubar-toolbars-scrollbars][Disable Menubar, Toolbars, Scrollbars]]
+  - [[#display-line-numbers-relative--truncated-lines][Display line numbers (relative) & truncated lines]]
+- [[#which-key][WHICH-KEY]]
+- [[#org-mode][ORG MODE]]
+  - [[#enabling-table-of-contents][Enabling Table of Contents]]
+  - [[#add-pretty-bullets][Add pretty bullets]]
+  - [[#disable-electric-indent][Disable Electric Indent]]
+  - [[#source-code-block-tag-expansion][Source Code Block Tag Expansion]]
 
 * IMPORTANT PROGRAMS TO LOAD FIRST
 ** Elpaca Package Manager
