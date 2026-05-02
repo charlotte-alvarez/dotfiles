@@ -104,8 +104,10 @@
   (use-package general
     :ensure t
     :after evil
+    :demand t
     :config
     (general-evil-setup))
+  (elpaca-wait)
 
     ;; set up 'SPC' as the global leader key
     (general-create-definer char/leader-keys
