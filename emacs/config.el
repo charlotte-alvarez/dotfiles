@@ -69,7 +69,7 @@
   :ensure t
   :after evil
   :config
-  (general-evil-setup)
+  (general-evil-setup))
 
   ;; set up 'SPC' as the global leader key
   (general-create-definer char/leader-keys
@@ -78,43 +78,58 @@
     :prefix "SPC"
     :global-prefix "M-SPC")
 
-  (char/leader-keys
     ;; Buffer keys
+  (defun char/open-scratch-buffer ()
+    (interactive)
+    (switch-to-buffer (get-buffer-create "*scratch*")))
+  (char/leader-keys
     "b" '(:ignore t :wk "buffer")
     "bb" '(switch-to-buffer :wk "Switch buffer")
     "bk" '(kill-current-buffer :wk "Kill current buffer")
     "bn" '(next-buffer :wk "Next buffer")
     "bp" '(previous-buffer :wk "Previous buffer")
     "br" '(revert-buffer :wk "Reload buffer")
-
-    "bs" '(lambda () (interactive)
-            (switch-to-buffer (get-buffer-create "*scratch*")))
+    "bi" '(ibuffer :wk "Ibuffer")
+    "bs" '(char/open-scratch-buffer :wk "Open Scratch"))
 
     ;; File keys
-    "f" '(:ignore t :wk "file")
-    "ff" '(find-file :wk "Find file")
-
-    "foc" '(lambda () (interactive)
-             (find-file char/emacs-config-org))
-
-    ;; Help keys
-    "h" '(:ignore t :wk "help")
-    "hk" '(describe-key :wk "Describe key")
-    "hc" '(describe-key-briefly :wk "Describe key briefly")
-    "hx" '(describe-command :wk "Describe command")
-    "hf" '(describe-function :wk "Describe function")
-    "hv" '(describe-variable :wk "Describe variable")
-    "h?" '(help-for-help :wk "Help for help")
-    )
-
-  ;; Reload config (keep inside :config!)
+  (defun char/find-org-config ()
+    (interactive)
+    (find-file char/emacs-config-org))
   (defun char/reload-config ()
     (interactive)
     (org-babel-tangle-file char/emacs-config-org)
     (load-file (expand-file-name "init.el" user-emacs-directory)))
-
   (char/leader-keys
-    "fr" '(char/reload-config :wk "Reload config")))
+    "f" '(:ignore t :wk "File")
+    "ff" '(find-file :wk "Find File")
+    "fo" '(:ignore t :wk "Open File")
+    "foc" '(char/find-org-config :wk "Org Config")
+    "fr" '(char/reload-config :wk "Reload Config"))
+
+    ;; Help keys
+  (char/leader-keys
+    "h" '(:ignore t :wk "Help")
+    "hk" '(describe-key :wk "Describe Key")
+    "hc" '(describe-key-briefly :wk "Describe Key Briefly")
+    "hx" '(describe-command :wk "Describe Command")
+    "hf" '(describe-function :wk "Describe Function")
+    "hv" '(describe-variable :wk "Describe Variable")
+    "h?" '(help-for-help :wk "Help For Help"))
+
+  ;; Eval keys
+  (char/leader-keys
+  "e" '(:ignore t :wk "Evaluate")
+  "eb" '(eval-buffer :wk "Evaluate Elisp in Buffer")
+  "ed" '(eval-defun :wk "Evaluate Defun Containing or After Point")
+  "ee" '(eval-expression :wk "Evaluate an Elisp Expression")
+  "el" '(eval-last-sexp :wk "Evaluate Elisp Expression Before Point")
+  "er" '(eval-region :wk "Evaluate Elisp in Region"))
+
+;; Editing keys
+(char/leader-keys
+  "i" '(:ignore t :wk "Edit")
+  "ic" '(comment-line :wk "Toggle comment"))
 
 (set-face-attribute 'default nil
 		    :font "JetBrains Mono"
@@ -162,7 +177,7 @@
 	  which-key-side-window-slot -10
 	  which-key-side-window-max-height 0.25
 	  which-key-idle-delay 0.8
-	  which-key-max-description-length 25
+	  which-key-max-description-length 45
 	  which-key-allow-imprecise-window-fit t
 	  which-key-separator " → " ))
 
