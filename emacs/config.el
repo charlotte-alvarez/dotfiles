@@ -165,3 +165,11 @@
 	  which-key-max-description-length 25
 	  which-key-allow-imprecise-window-fit t
 	  which-key-separator " → " ))
+
+(use-package toc-org
+  :ensure t
+  :hook (org-mode . toc-org-enable))
+
+(use-package org-bullets
+  :ensure t
+  :hook (org-mode . org-bullets-mode))

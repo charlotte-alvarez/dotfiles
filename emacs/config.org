@@ -202,3 +202,17 @@ Defining the various fonts that emacs will use
 	  which-key-separator " → " ))
 #+end_src
 
+* ORG MODE
+** Enabling Table of Contents
+#+begin_src emacs-lisp
+(use-package toc-org
+  :ensure t
+  :hook (org-mode . toc-org-enable))
+#+end_src
+
+** Add pretty bullets
+#+begin_src emacs-lisp
+(use-package org-bullets
+  :ensure t
+  :hook (org-mode . org-bullets-mode))
+#+end_src
