@@ -82,7 +82,7 @@
     ;; Buffer keys
     "b" '(:ignore t :wk "buffer")
     "bb" '(switch-to-buffer :wk "Switch buffer")
-    "bk" '(kill-this-buffer :wk "Kill this buffer")
+    "bk" '(kill-current-buffer :wk "Kill current buffer")
     "bn" '(next-buffer :wk "Next buffer")
     "bp" '(previous-buffer :wk "Previous buffer")
     "br" '(revert-buffer :wk "Reload buffer")
@@ -95,7 +95,7 @@
     "ff" '(find-file :wk "Find file")
 
     "foc" '(lambda () (interactive)
-             (find-file char/emacs-config-org) :wk "Open emacs config")
+             (find-file char/emacs-config-org))
 
     ;; Help keys
     "h" '(:ignore t :wk "help")
@@ -103,6 +103,8 @@
     "hc" '(describe-key-briefly :wk "Describe key briefly")
     "hx" '(describe-command :wk "Describe command")
     "hf" '(describe-function :wk "Describe function")
+    "hv" '(describe-variable :wk "Describe variable")
+    "h?" '(help-for-help :wk "Help for help")
     )
 
   ;; Reload config (keep inside :config!)
