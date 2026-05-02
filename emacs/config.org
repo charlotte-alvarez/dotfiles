@@ -182,6 +182,8 @@
 * Fonts
 Defining the various fonts that emacs will use
 
+** Setting the Font Face
+
 #+begin_src emacs-lisp
   (set-face-attribute 'default nil
   		    :font "JetBrains Mono"
