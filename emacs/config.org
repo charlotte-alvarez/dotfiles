@@ -171,6 +171,14 @@
 
 #+end_src
 
+** Regular Keybinds
+
+*** Zooming In/Out
+#+begin_src emacs-lisp
+(global-set-key (kbd "C-=") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+#+end_src
+
 * Fonts
 Defining the various fonts that emacs will use
 
