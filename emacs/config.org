@@ -100,6 +100,7 @@
 
 ** General Keybindings
 
+*** Use Package General
 #+begin_src emacs-lisp
   (defvar char/emacs-config-org
     (expand-file-name "config.org" user-emacs-directory))
@@ -109,17 +110,19 @@
     :after evil
     :demand t
     :config
-    (general-evil-setup))
-  (elpaca-wait)
+    (general-evil-setup)
 
-    ;; set up 'SPC' as the global leader key
     (general-create-definer char/leader-keys
       :states '(normal visual)
       :keymaps 'override
       :prefix "SPC"
-      :global-prefix "M-SPC")
+      :global-prefix "M-SPC"))
+  (elpaca-wait)
+#+end_src
 
-      ;; Buffer keys
+
+*** Buffer
+#+begin_src emacs-lisp
     (defun char/open-scratch-buffer ()
       (interactive)
       (switch-to-buffer (get-buffer-create "*scratch*")))
@@ -132,6 +135,7 @@
       "br" '(revert-buffer :wk "Reload buffer")
       "bi" '(ibuffer :wk "Ibuffer")
       "bs" '(char/open-scratch-buffer :wk "Open Scratch"))
+#+end_src
 
       ;; File keys
     (defun char/find-org-config ()
@@ -147,8 +151,10 @@
       "fo" '(:ignore t :wk "Open File")
       "foc" '(char/find-org-config :wk "Org Config")
       "fr" '(char/reload-config :wk "Reload Config"))
+#+end_src
 
-      ;; Help keys
+*** Help
+#+begin_src emacs-lisp
     (char/leader-keys
       "h" '(:ignore t :wk "Help")
       "hk" '(describe-key :wk "Describe Key")
@@ -157,8 +163,10 @@
       "hf" '(describe-function :wk "Describe Function")
       "hv" '(describe-variable :wk "Describe Variable")
       "h?" '(help-for-help :wk "Help For Help"))
+#+end_src
 
-    ;; Eval keys
+*** Eval
+#+begin_src emacs-lisp
     (char/leader-keys
     "e" '(:ignore t :wk "Evaluate")
     "eb" '(eval-buffer :wk "Evaluate Elisp in Buffer")
@@ -166,8 +174,10 @@
     "ee" '(eval-expression :wk "Evaluate an Elisp Expression")
     "el" '(eval-last-sexp :wk "Evaluate Elisp Expression Before Point")
     "er" '(eval-region :wk "Evaluate Elisp in Region"))
+#+end_src
 
-  ;; Editing keys
+*** Editing
+#+begin_src emacs-lisp
   (char/leader-keys
     "i" '(:ignore t :wk "Edit")
     "ic" '(comment-line :wk "Toggle comment"))
