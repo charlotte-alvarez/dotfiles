@@ -21,6 +21,8 @@
   - [[#add-pretty-bullets][Add pretty bullets]]
   - [[#disable-electric-indent][Disable Electric Indent]]
   - [[#source-code-block-tag-expansion][Source Code Block Tag Expansion]]
+- [[#editing][Editing]]
+  - [[#sudo-edit][Sudo Edit]]
 
 * IMPORTANT PROGRAMS TO LOAD FIRST
 ** Elpaca Package Manager
@@ -289,4 +291,18 @@ Org-tempo is not a separate package but a module within org that can be enabled.
 
 #+begin_src emacs-lisp
 (require 'org-tempo)
+#+end_src
+
+
+* Editing
+
+** Sudo Edit
+
+#+begin_src emacs-lisp
+  (use-package sudo-edit
+    :ensure t
+    :config
+    (char/leader-keys
+      "fu" '(sudo-edit-find-file :wk "Sudo Find File")
+      "fU" '(sudo-edit :wk "Sudo Edit File")))
 #+end_src
