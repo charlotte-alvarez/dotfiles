@@ -9,7 +9,6 @@
   - [[#elpaca-package-manager][Elpaca Package Manager]]
   - [[#load-evil-mode][Load Evil Mode]]
   - [[#general-keybindings][General Keybindings]]
-  - [[#regular-keybinds][Regular Keybinds]]
 - [[#fonts][Fonts]]
   - [[#setting-the-font-face][Setting the Font Face]]
 - [[#graphical-user-interface-tweaks][GRAPHICAL USER INTERFACE TWEAKS]]
@@ -23,6 +22,8 @@
   - [[#source-code-block-tag-expansion][Source Code Block Tag Expansion]]
 - [[#editing][Editing]]
   - [[#sudo-edit][Sudo Edit]]
+- [[#regular-keybinds][Regular Keybinds]]
+  - [[#zooming-inout][Zooming In/Out]]
 
 * IMPORTANT PROGRAMS TO LOAD FIRST
 ** Elpaca Package Manager
@@ -170,15 +171,6 @@
   (char/leader-keys
     "i" '(:ignore t :wk "Edit")
     "ic" '(comment-line :wk "Toggle comment"))
-
-#+end_src
-
-** Regular Keybinds
-
-*** Zooming In/Out
-#+begin_src emacs-lisp
-(global-set-key (kbd "C-=") 'text-scale-increase)
-(global-set-key (kbd "C--") 'text-scale-decrease)
 #+end_src
 
 * Fonts
@@ -305,4 +297,13 @@ Org-tempo is not a separate package but a module within org that can be enabled.
     (char/leader-keys
       "fu" '(sudo-edit-find-file :wk "Sudo Find File")
       "fU" '(sudo-edit :wk "Sudo Edit File")))
+#+end_src
+
+* Regular Keybinds
+
+** Zooming In/Out
+*** Zooming In/Out
+#+begin_src emacs-lisp
+(global-set-key (kbd "C-=") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
 #+end_src
