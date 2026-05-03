@@ -38,3 +38,5 @@ emacs/eln-cache/
 !bash/*
 emacs/tramp
 emacs/config.el
+emacs/url
+emacs/url/**
