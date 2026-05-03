@@ -36,3 +36,5 @@ emacs/eln-cache/
 !bash/
 !bash/**
 !bash/*
+emacs/tramp
+emacs/config.el
