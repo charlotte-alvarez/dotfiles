@@ -185,7 +185,9 @@
       "hx" '(describe-command :wk "Describe Command")
       "hf" '(describe-function :wk "Describe Function")
       "hv" '(describe-variable :wk "Describe Variable")
-      "h?" '(help-for-help :wk "Help For Help"))
+      "h?" '(help-for-help :wk "Help For Help")
+      "ht" '(tool-bar-mode :wk "Toogle tool bar")
+      "hT" '(menu-bar-mode :wk "Toogle menu bar"))
 #+end_src
 
 *** Eval
