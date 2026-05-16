@@ -1,6 +1,5 @@
 #+TITLE: Emacs Configuration
 
-
 * Package Management
 
 ** Elpaca
@@ -103,9 +102,21 @@
 
 ** Theme
 
+Catppuccin theme because its cute
+
 #+begin_src emacs-lisp
   (use-package catppuccin-theme
     :ensure t
     :config
     (load-theme 'catppuccin :no-confirm))
 #+end_src
+
+** Line Numbers
+
+Relative line numbers, duh
+
+#+begin_src emacs-lisp
+  (setq display-line-numbers 'relative)
+  (global-display-line-numbers-mode t)
+#+end_src
+
