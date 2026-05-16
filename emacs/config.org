@@ -120,3 +120,12 @@ Relative line numbers, duh
   (global-display-line-numbers-mode t)
 #+end_src
 
+* File Management
+
+** Backups
+
+Disable backup files - since anything important I track with version control systems (i.e. git)
+
+#+begin_src emacs-lisp
+(setq make-backup-files 0)
+#+end_src
