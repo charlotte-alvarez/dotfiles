@@ -98,6 +98,62 @@
     (evil-collection-init))
 #+end_src
 
+** Python Packages
+
+*** Elpy
+
+Install ~elpy~ - the Emacs Python Development Environment
+
+#+begin_src emacs-lisp
+  (use-package elpy
+    :ensure t
+    :init
+    (elpy-enable))
+#+end_src
+
+** Keybinds
+
+*** General
+
+General makes it easier to set keybindings
+
+#+begin_src emacs-lisp
+  (use-package general
+    :ensure t
+    :config
+    (general-evil-setup)
+
+    ;; set up 'SPC' as the global leader key
+    (general-create-definer char/leader-keys
+      :states '(normal insert visual emacs)
+      :keymaps 'override
+      :prefix "SPC" ;; set leader
+      :global-prefix "M-SPC") ;; access leader in insert mode
+
+    (char/leader-keys
+      "b" '(:ignore t :wk "buffer")
+      "bb" '(switch-to-buffer :wk "Switch buffer")
+      "bk" '(kill-this-buffer :wk "Kill this buffer")
+      "bn" '(next-buffer :wk "Next buffer")
+      "bp" '(previous-buffer :wk "Previous buffer")
+      "br" '(revert-buffer :wk "Reload buffer"))
+
+    (char/leader-keys
+      "f" '(:ignore t :wk "file")
+      "ff" '(find-file :wk "Find file"))
+
+    (char/leader-keys
+      "h" '(:ignore t :wk "help")
+      "hh" '(help-for-help :wk "Help for help")
+      "hf" '(describe-function :wk "Describe function")
+      "hx" '(describe-function :wk "Describe command")
+      "hv" '(describe-variable :wk "Describe variable")
+      "hk" '(describe-key :wk "Describe key")
+      "hc" '(describe-key-briefly :wk "Describe key briefly"))
+
+  )
+#+end_src
+
 * GUI
 
 ** Theme
@@ -128,4 +184,27 @@ Disable backup files - since anything important I track with version control sys
 
 #+begin_src emacs-lisp
 (setq make-backup-files 0)
+#+end_src
+
+* Help
+
+** Which Key
+
+#+begin_src emacs-lisp
+    (setq which-key-allow-evil-operators t ;; Enable popups to show for evil operators
+          which-key-show-early-on-C-h t ;; Trigger C-h popup before its done automatically
+          which-key-side-window-location 'bottom
+          which-key-sort-order #'which-key-key-order-alpha
+          which-key-sort-uppercase-first nil
+          which-key-add-column-padding 1
+          which-key-max-display-columns nil
+          which-key-min-display-lines 6
+          which-key-side-window-slot -10
+          which-key-side-window-max-height 0.25
+          which-key-idle-delay 0.8
+          which-key-max-description-length 25
+          which-key-allow-imprecise-window-fit t
+          which-key-separator " → " 
+  	which-key-idle-secondary-delay 0.05)
+    (which-key-mode)
 #+end_src
