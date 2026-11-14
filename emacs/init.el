@@ -14,9 +14,14 @@
 ;; ********** EDITOR ************
 ;; ---------- EDITOR APPEARANCE -----------
 (global-display-line-numbers-mode 1) ; Disable line numbers in every buffer
-(load-theme 'deeper-blue t)
 (add-to-list 'default-frame-alist
 	     '(font . "JetBrains Mono-16"))
+
+
+;; ---------- EDITOR THEMES ------------
+(use-package solarized-theme :ensure t)
+(use-package cyberpunk-theme :ensure t)
+(load-theme 'solarized-selenized-black t)
 
 
 ;; ---------- EDITOR INTERACTION -----------
@@ -84,8 +89,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(company evil-collection evil-indent-textobject evil-leader evil-org
-	     evil-surround general magit vertico)))
+   '(company cyberpunk-theme evil-collection evil-indent-textobject
+	     evil-leader evil-org evil-surround general magit
+	     solarized-theme vertico)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -117,6 +123,7 @@
     :keymaps 'normal
     "f" '("Find" . (keymap))
     "ff" '("file" . ido-find-file)
+    "fl" '("open right" . find-file-other-window)
 
     "b" '("Buffer" . (keymap))
     "bb" '("switch" . ido-switch-buffer)
@@ -174,5 +181,6 @@
 
 
 ;; -------- MAGIT --------
-(use-package magit
-  :ensure t)
+(use-package magit :ensure t)
+
+

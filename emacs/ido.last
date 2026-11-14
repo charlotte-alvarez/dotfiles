@@ -24,8 +24,8 @@
 
 ;; ----- ido-work-file-list -----
 (
- "init.el"
  "test.py"
+ "init.el"
  "main.py"
  "todo.md"
  "editor_settings-4.6.tres"
@@ -34,7 +34,7 @@
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/home/char/.config/emacs/" (27384 37720 548528 363000) "todo.md" "test.py~" ".local/" "test.py" "ido.last" "todo.md~" "auto-save-list/" "ido.last~" "./" "eln-cache/" "../" "transient/" "elpa/" "init.el~" "init.el")
+ ("/home/char/.config/emacs/" (27384 39910 14136 872000) "todo.md" "test.py~" ".local/" "test.py" "ido.last" "todo.md~" "auto-save-list/" "ido.last~" "./" "eln-cache/" "../" "transient/" "elpa/" "early-init.el~" "early-init.el" "init.el~" "init.el")
 
  ("/home/char/projects/TAFFY/src/taffy/" (27383 53111 214027 627000) "connections/" "test" "utils/" "__pycache__/" "./" "../" "main.py" "__init__.py")
 
