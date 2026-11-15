@@ -16,10 +16,10 @@ emacs/recentf
 emacs/elpa/
 emacs/elfeed/
 emacs/.local/
-emacs/*~
 emacs/auto-save-list/
 emacs/ido.last
 emacs/transient/
+*~ # Backup files
 
 
 # Other allowed dirs/files

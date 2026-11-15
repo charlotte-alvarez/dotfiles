@@ -2,6 +2,17 @@
 ;; -------- splash screen -------
 (setq inhibit-startup-message t) ; Disable startup message
 
+;; Allow lisp scripts to be loaded
+(add-to-list 'load-path
+	     (expand-file-name "lisp" user-emacs-directory))
+
+;; move autosaves to user-emacs-directory/auto-save
+(setq auto-save-file-name-transforms
+      `((".*" ,(expand-file-name "auto-save/" user-emacs-directory) t)))
+
+;; disable backup files
+(setq make-backup-files nil)
+
 
 ;; ********* WINDOW **************
 ;; --------- WINDOW APPEARANCE -----------
