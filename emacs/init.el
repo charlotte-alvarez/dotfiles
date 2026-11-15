@@ -1,4 +1,4 @@
-;; ******** STARTUP ********
+;; ******** STARTUP ********  -*- lexical-binding: t; -*-
 ;; -------- splash screen -------
 (setq inhibit-startup-message t) ; Disable startup message
 
@@ -16,13 +16,30 @@
 (global-display-line-numbers-mode 1) ; Disable line numbers in every buffer
 (add-to-list 'default-frame-alist
 	     '(font . "JetBrains Mono-16"))
+(use-package doom-modeline
+  :ensure t
+  :custom
+  (doom-themes-enable bold t)
+  (doom-themes enable-italic t)
+  :config
+
+  (doom-modeline-mode 1))
+
 
 
 ;; ---------- EDITOR THEMES ------------
 (use-package solarized-theme :ensure t)
 (use-package cyberpunk-theme :ensure t)
-(load-theme 'solarized-selenized-black t)
-
+(use-package doom-themes
+  :ensure t
+  :config
+  ;;(load-theme 'doom-molokai t)
+  ;;(load-theme 'doom-badger t)
+  ;;(load-theme 'doom-dark+ t)
+  (load-theme 'doom-1337 t)
+  (doom-themes-visual-bell-config)
+  (doom-themes-neotree-config)
+  (doom-themes-org-config))
 
 ;; ---------- EDITOR INTERACTION -----------
 (ido-mode t) ; Always display suggestions when in command mode
@@ -89,9 +106,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(company cyberpunk-theme evil-collection evil-indent-textobject
-	     evil-leader evil-org evil-surround general magit
-	     solarized-theme vertico)))
+   '(company cyberpunk-theme doom-modeline doom-themes evil-collection
+	     evil-indent-textobject evil-leader evil-org evil-surround
+	     general magit solarized-theme vertico)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -184,3 +201,8 @@
 (use-package magit :ensure t)
 
 
+;; ------- NERD-ICONS --------
+(use-package nerd-icons
+  :ensure t
+  :config
+  (setq nerd-icons-font-family "JetBrainsMono Nerd Font"))

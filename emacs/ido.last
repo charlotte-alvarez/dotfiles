@@ -34,13 +34,15 @@
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/home/char/.config/emacs/" (27384 39910 14136 872000) "todo.md" "test.py~" ".local/" "test.py" "ido.last" "todo.md~" "auto-save-list/" "ido.last~" "./" "eln-cache/" "../" "transient/" "elpa/" "early-init.el~" "early-init.el" "init.el~" "init.el")
+ ("/home/char/.config/emacs/" (27385 9838 844455 458000) "todo.md" "test.py~" ".local/" "test.py" "ido.last" "todo.md~" "auto-save-list/" "ido.last~" "./" "eln-cache/" "../" "transient/" "elpa/" "early-init.el~" "early-init.el" "init.el~" "init.el")
+
+ ("/home/char/.config/" (27384 40083 269298 575000) "zoom.conf" "sandustry/" "VirtualBox/" "gtk-4.0/" "xdg-terminals.list" "Code/" "aseprite/" "Unknown Organization/" ".gitignore" "test.py" "unity3d/" "doom/" "gnome-session/" "dconf/" "gnome-xdg-terminals.list" "nautilus/" "libreoffice/" "zoomus.conf" "README.md" "CurseForge/" "pulse/" "connections.db" "procps/" "enchant/" "background" "GIMP/" "tigervnc/" "gtk-3.0/" "godot/" ".git/" "user-dirs.locale" "mimeapps.list" "nvim/" "ow-electron/" "wireshark/" "kitty/" "QtProject.conf" "user-dirs.dirs" "goa-1.0/" "menus/" "monitors.xml~" ".gsd-keyboard.settings-ported" "./" "Studio/" "shotwell/" "evolution/" "heroic/" "../" "ibus/" "bash/" "powerline/" ".bashrc" "monitors.xml" "jgit/" "land.adventure.rpg/" "discord/" "emacs/")
+
+ ("/home/char/" (27384 41494 426145 661000) "Templates/" ".bash_logout" "JetBrainsMono/" ".fltk/" "JetBrainsMono.zip" ".xlcore/" ".local/" ".steampath" ".bash_completions/" "tigervnc-1.16.2.x86_64/" ".copilot/" ".var/" ".nv/" ".zoom/" ".java/" "Desktop/" "projects/" ".mozilla/" ".cache/" "JetBrainsMono (2)/" "SEED-Ubuntu20.04/" ".face" ".studio/" "Public/" "Screenshots/" ".gitconfig" ".bash_history" ".npm/" ".git-credentials" "node_modules/" ".vim/" ".python_history" ".profile" "Applications/" ".vscode/" ".steam/" ".face.icon" ".dotnet/" ".pki/" "Games/" ".ssh/" "downloads/" ".factorio/" ".gnupg/" ".vscode-shared/" "Documents/" ".config/" ".bashrc" ".authinfo" ".barony/" ".sudo_as_admin_successful" "vs_client_linux-x64_1.22.3/" ".steampid" "../" "./")
 
  ("/home/char/projects/TAFFY/src/taffy/" (27383 53111 214027 627000) "connections/" "test" "utils/" "__pycache__/" "./" "../" "main.py" "__init__.py")
 
  ("/home/char/.config/emacs/auto-save-list/" (27383 52479 225697 406000) "./" "../")
-
- ("/home/char/" (27383 48525 260194 151000) "Templates/" ".bash_logout" "JetBrainsMono/" ".fltk/" ".xlcore/" ".local/" ".steampath" ".bash_completions/" "tigervnc-1.16.2.x86_64/" ".copilot/" ".var/" ".nv/" ".zoom/" ".java/" "Desktop/" "projects/" ".mozilla/" ".cache/" "SEED-Ubuntu20.04/" ".face" ".studio/" "Public/" "Screenshots/" ".gitconfig" ".bash_history" ".npm/" ".git-credentials" "node_modules/" ".vim/" ".python_history" ".profile" "Applications/" ".vscode/" ".steam/" ".face.icon" ".dotnet/" ".pki/" "Games/" ".ssh/" "downloads/" ".factorio/" ".gnupg/" ".vscode-shared/" "Documents/" ".config/" ".bashrc" ".authinfo" ".barony/" ".sudo_as_admin_successful" "vs_client_linux-x64_1.22.3/" ".steampid" "../" "./")
 
  ("/home/char/projects/TAFFY/src/" (27197 54572 226447 751000) "taffy/" "./" "../")
 
@@ -49,8 +51,6 @@
  ("/home/char/projects/" (27317 8973 269661 498000) "notes/" "2026-Coding-Competition/" "spelling-bee/" "TAFFY/" "godot/" "./" "sorting-algorithm-visualizer/" "../" "networking-programming-assignments/")
 
  ("/home/char/.config/godot/" (27262 21115 513008 86000) "editor_settings-4.7.tres" "text_editor_themes/" "recent_dirs" "feature_profiles/" "editor_settings-4.6.tres" "./" "../" "script_templates/")
-
- ("/home/char/.config/" (27383 16042 352341 675000) "zoom.conf" "sandustry/" "VirtualBox/" "gtk-4.0/" "xdg-terminals.list" "Code/" "aseprite/" "Unknown Organization/" ".gitignore" "test.py" "unity3d/" "doom/" "gnome-session/" "dconf/" "gnome-xdg-terminals.list" "nautilus/" "libreoffice/" "zoomus.conf" "README.md" "CurseForge/" "pulse/" "connections.db" "procps/" "enchant/" "background" "GIMP/" "tigervnc/" "gtk-3.0/" "godot/" ".git/" "user-dirs.locale" "mimeapps.list" "nvim/" "ow-electron/" "wireshark/" "kitty/" "QtProject.conf" "user-dirs.dirs" "goa-1.0/" "menus/" "monitors.xml~" ".gsd-keyboard.settings-ported" "./" "Studio/" "shotwell/" "evolution/" "heroic/" "../" "ibus/" "bash/" "powerline/" ".bashrc" "monitors.xml" "jgit/" "land.adventure.rpg/" "discord/" "emacs/")
 
  ("/home/char/.config/emacs/.local/cache/autosave/" (27382 14446 952105 236000) "39324-char~" "./" "../")
 
