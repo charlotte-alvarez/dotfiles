@@ -15,9 +15,9 @@ emacs/projectile-bookmarks.eld
 emacs/recentf
 emacs/elpa/
 emacs/elfeed/
+emacs/.local/
+emacs/*~
 
-# Ignore emacs backup files
-*~
 
 # Other allowed dirs/files
 !nvim/
@@ -40,7 +40,3 @@ emacs/elfeed/
 !bash/
 !bash/**
 !bash/*
-emacs/tramp
-emacs/config.el
-emacs/url
-emacs/url/**
