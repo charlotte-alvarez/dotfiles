@@ -66,9 +66,6 @@
   :defer t
   :hook (python-mode . eglot-ensure))
 
-(setq major-mode-remap-alist
-      '((python-mode . python-ts-mode)))
-
 
 ;; ---------- WHICH-KEY -----------
 (which-key-mode 1)
@@ -123,9 +120,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(company cyberpunk-theme doom-modeline doom-themes evil-collection
-	     evil-indent-textobject evil-leader evil-org evil-surround
-	     general magit solarized-theme vertico)))
+   '(company cyberpunk-theme doom-modeline doom-themes elpy
+	     evil-collection evil-indent-textobject evil-leader
+	     evil-org evil-surround general magit solarized-theme
+	     vertico)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -172,3 +170,10 @@
   :ensure t
   :config
   (setq nerd-icons-font-family "JetBrainsMono Nerd Font"))
+
+
+;; ------- ELPY ----------
+(use-package elpy
+  :ensure t
+  :init
+  (elpy-enable))
