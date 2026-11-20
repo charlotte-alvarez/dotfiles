@@ -5,13 +5,22 @@
     :keymaps ,keymap
 
     "f" '("Find" . (keymap))
-    "ff" '("file" . ido-find-file)
-    "fl" '("open right" . find-file-other-window)
+    "ff" '("project - file" . project-find-file)
+    "fF" '("open file right" . find-file)
+    "fl" '("open file right" . find-file-other-window)
+    "fb" '("bookmarks" . bookmark-jump)
+    "fB" '("set bookmark" . bookmark-set)
+    "f C-b" '("list bookmarks" . bookmark-bmenu-list)
+    "fr" '("project - regex" . project-find-regexp)
+    "ft" '("terminal" . vterm-other-window)
+	
 
     "b" '("Buffer" . (keymap))
     "bb" '("switch" . ido-switch-buffer)
     "bm" '("messages" . view-echo-area-messages)
+    "bm" '("scratch" . scratch-buffer)
     "bl" '("open right" . switch-to-buffer-other-window)
+    "bq" '("kill buffer" . kill-buffer)
 
     "w" '("Window" . (keymap))
     "wq" '("delete window" . delete-window)
@@ -51,15 +60,26 @@
     "hb" '("keybinds for buffer" . describe-bindings)
 
     "d" '("Dired" . (keymap))
-    "dd" '("open dired" . dired)
+    "dd" '("project - open dired" . project-find-dir)
+    "dD" '("open dired" . dired)
 
     "e" '("Eglot" . (keymap))
     "ed" '("goto definition" . xref-find-definitions)
     "er" '("show references" . xref-find-references)
     "eR" '("find-and-replace" . xref-find-references-and-replace)
 
+    "p" '("Python" . (keymap))
+    "pj" '("goto next problem" . flymake-goto-next-error)
+    "pk" '("goto prev problem" . flymake-goto-prev-error)
+    "pd" '("documentation" . elpy-doc)
+
+    "P" '("Projects" . (keymap))
+    "PP" '("switch" . project-switch-project)
+    "Pr" '("remember" . project-remember-projects-under)
+
     "g" '("Magit" . (keymap))
     "gg" '("status buffer" . magit-status)
+
     ))
 
 (provide 'keybindings)

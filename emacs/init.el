@@ -1,4 +1,31 @@
 ;; ******** STARTUP ********  -*- lexical-binding: t; -*-
+
+;; -------- PACKAGE MANAGEMENT ---------
+;; ******** PACKAGE MANAGEMENT ********
+
+(require 'package)
+
+(setq package-archives
+      '(("gnu"    . "https://elpa.gnu.org/packages/")
+        ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+        ("melpa"  . "https://melpa.org/packages/")))
+
+(package-initialize)
+
+;; Refresh package metadata only when necessary
+(unless package-archive-contents
+  (package-refresh-contents))
+
+;; Install use-package if missing
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+
+(require 'use-package)
+
+;; Automatically install packages declared with :ensure t
+(setq use-package-always-ensure t)
+
+
 ;; -------- splash screen -------
 (setq inhibit-startup-message t) ; Disable startup message
 
@@ -6,9 +33,11 @@
 (add-to-list 'load-path
 	     (expand-file-name "lisp" user-emacs-directory))
 
-;; move autosaves to user-emacs-directory/auto-save
-(setq auto-save-file-name-transforms
-      `((".*" ,(expand-file-name "auto-save/" user-emacs-directory) t)))
+;; Store auto-save files in ~/.emacs.d/auto-save/
+(let ((auto-save-dir (expand-file-name "auto-save/" user-emacs-directory)))
+  (make-directory auto-save-dir t)
+  (setq auto-save-file-name-transforms
+        `((".*" ,auto-save-dir t))))
 
 ;; disable backup files
 (setq make-backup-files nil)
@@ -29,12 +58,11 @@
 	     '(font . "JetBrains Mono-16"))
 (use-package doom-modeline
   :ensure t
+  :init
+  (doom-modeline-mode 1)
   :custom
   (doom-themes-enable bold t)
-  (doom-themes enable-italic t)
-  :config
-
-  (doom-modeline-mode 1))
+  (doom-themes enable-italic t))
 
 
 
@@ -72,27 +100,6 @@
 (setq which-key-idle-delay 0.5)
 
 
-
-
-
-;; ********* PACKAGES ********
-;; Set up package.el to work with MELPA
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
-(package-initialize)
-(package-refresh-contents)
-
-
-;; -------- USE-PACKAGE -------
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
-(eval-when-compile
-  (require 'use-package))
-
-
 ;; --------- EVIL -----------
 (use-package evil
   :ensure t
@@ -114,22 +121,6 @@
 
   :config
   (evil-collection-init))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(company cyberpunk-theme doom-modeline doom-themes elpy
-	     evil-collection evil-indent-textobject evil-leader
-	     evil-org evil-surround general magit solarized-theme
-	     vertico)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
 
 
 ;; ------ COMPANY ---------
@@ -176,4 +167,36 @@
 (use-package elpy
   :ensure t
   :init
-  (elpy-enable))
+  (elpy-enable)
+  :config
+  (add-hook 'elpy-mode-hook (lambda ()
+			      (add-hook 'before-save-hook
+					'elpy-format-code nil t))))
+
+
+;; ------- LIBVTERM -------
+(use-package vterm
+  :ensure t
+  :config
+  (defun my-vterm-exit-hook (buffer event)
+    (message "Terminal exited with event: %s" event)
+    (delete-window))
+  (add-hook 'vterm-exit-functions 'my-vterm-exit-hook))
+
+
+
+
+    (custom-set-variables
+     ;; custom-set-variables was added by Custom.
+     ;; If you edit it by hand, you could mess it up, so be careful.
+     ;; Your init file should contain only one such instance.
+     ;; If there is more than one, they won't work right.
+     '(package-selected-packages
+       '(cyberpunk-theme doom-modeline doom-themes elpy evil-collection
+			 evil-surround general magit solarized-theme vterm)))
+    (custom-set-faces
+     ;; custom-set-faces was added by Custom.
+     ;; If you edit it by hand, you could mess it up, so be careful.
+     ;; Your init file should contain only one such instance.
+     ;; If there is more than one, they won't work right.
+     )
