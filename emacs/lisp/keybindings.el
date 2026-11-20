@@ -13,6 +13,7 @@
     "f C-b" '("list bookmarks" . bookmark-bmenu-list)
     "fr" '("project - regex" . project-find-regexp)
     "ft" '("terminal" . vterm-other-window)
+    "fT" '("terminal - send command" . shell-command)
 	
 
     "b" '("Buffer" . (keymap))
