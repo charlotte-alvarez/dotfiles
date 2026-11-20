@@ -43,3 +43,5 @@ emacs/transient/
 !bash/
 !bash/**
 !bash/*
+/emacs/auto-save/
+/emacs/tramp
